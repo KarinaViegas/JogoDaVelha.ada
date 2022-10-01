@@ -4,15 +4,22 @@ public class JogoDaVelha {
         String participante1 = GetUser.getUser("X");
         String participante2 = GetUser.getUser("O");
 
-        String[] tabuleiro = {"1","2","3","4","5","6","7","8","9"};
+        String[] tabuleiro = {"1", "2", "3", "4", "5", "6", "7", "8", "9"};
+        int vitoriasPart1 = 0;
+        int vitoriasPart2 = 0;
         TabuleiroPrint.tabuleiroPrint(tabuleiro);
 
-        int fimDeJogo = 0;
-        while (fimDeJogo<9){
-            Rodada.rodada(participante1, participante2, tabuleiro);
-            TabuleiroPrint.tabuleiroPrint(tabuleiro);
-            fimDeJogo++;//funçao que calcula o ganhador do jogo
+        String vencedor = Rodadas.rodadas(participante1, participante2, tabuleiro);
+
+        if (vencedor.equals(participante1)) {
+            vitoriasPart1++;
+        } else if (vencedor.equals(participante2)) {
+            vitoriasPart2++;
+        } else {
+            System.out.println("Empate!");
         }
+
+        System.out.println("Jogo encerrado" + vencedor);
 
         //placar
         //Fazer os tratamentos de erros, evitar que o jogador errar a posiçao

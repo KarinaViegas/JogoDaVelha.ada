@@ -1,10 +1,9 @@
 import java.util.Scanner;
 
-public class Rodada {
-    public static void rodada(String participante1, String participante2, String[] tabuleiro){
+public class Jogadas {
+    public static String jogadas(String participante1, String participante2, String[] tabuleiro, String vez){
         Scanner scanner = new Scanner(System.in);
         int posicaoJogada;
-        String vez = participante1;
         if (vez.equals(participante1)){
             System.out.printf("%n%s, escolha em qual posicão você deseja jogar:%n", participante1);
             posicaoJogada = scanner.nextInt();
@@ -15,7 +14,7 @@ public class Rodada {
             posicaoJogada = scanner.nextInt();
             tabuleiro[--posicaoJogada] = "O";
             vez = participante1;
-
         }
+        return vez;
     }
 }
