@@ -7,13 +7,21 @@ public class Jogadas {
         if (vez.equals(participante1)){
             System.out.printf("%n%s, escolha em qual posicão você deseja jogar:%n", participante1);
             posicaoJogada = scanner.nextInt();
-            tabuleiro[--posicaoJogada] = "X";
-            vez = participante2;
+            if (!(tabuleiro[--posicaoJogada].equals("X") || tabuleiro[posicaoJogada].equals("O"))) {
+                tabuleiro[posicaoJogada] = "X";
+                vez = participante2;
+            }else{
+                System.out.println("Posição inválida");
+            }
         } else if (vez.equals(participante2)) {
             System.out.printf("%n%s, escolha em qual posicão você deseja jogar:%n", participante2);
             posicaoJogada = scanner.nextInt();
-            tabuleiro[--posicaoJogada] = "O";
-            vez = participante1;
+            if (!(tabuleiro[--posicaoJogada].equals("X") || tabuleiro[posicaoJogada].equals("O"))) {
+                tabuleiro[posicaoJogada] = "O";
+                vez = participante1;
+            }else{
+                System.out.println("Posição inválida");
+            }
         }
         return vez;
     }
