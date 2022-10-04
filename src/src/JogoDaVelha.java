@@ -11,8 +11,8 @@ public class JogoDaVelha {
         String[] tabuleiro = {"1", "2", "3", "4", "5", "6", "7", "8", "9"};
         char jogarNovamente = 'S';
 
-        TabuleiroPrint.tabuleiroPrint(tabuleiro);
         while(jogarNovamente == 'S') {
+            TabuleiroPrint.tabuleiroPrint(tabuleiro);
             String vencedor = Rodadas.rodadas(participante1, participante2, tabuleiro);
             Placar.placar(vencedor, participante1, participante2);
             System.out.println("Digite 'S' para jogar outra partida");
