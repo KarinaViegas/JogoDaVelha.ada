@@ -7,10 +7,7 @@ public class Rodadas {
             vez = Jogadas.jogadas(participante1, participante2, tabuleiro, vez);
             TabuleiroPrint.tabuleiroPrint(tabuleiro);
             fimDeJogo++;
-            if ((tabuleiro[0].equals(tabuleiro[1]) && tabuleiro[1].equals(tabuleiro[2])) || (tabuleiro[3].equals(tabuleiro[4]) && tabuleiro[4].equals(tabuleiro[5])) ||
-                    (tabuleiro[6].equals(tabuleiro[7]) && tabuleiro[7].equals(tabuleiro[8])) || (tabuleiro[0].equals(tabuleiro[3]) && tabuleiro[3].equals(tabuleiro[6])) ||
-                    (tabuleiro[1].equals(tabuleiro[4]) && tabuleiro[4].equals(tabuleiro[7])) || (tabuleiro[2].equals(tabuleiro[5]) && tabuleiro[5].equals(tabuleiro[8])) ||
-                    (tabuleiro[0].equals(tabuleiro[4]) && tabuleiro[4].equals(tabuleiro[8])) || (tabuleiro[2].equals(tabuleiro[4]) && tabuleiro[4].equals(tabuleiro[6]))) {
+            if (verificarFinalJogo(tabuleiro)) {
                 System.out.println("O jogo acabou");
                 if (vez.equals(participante1)) {
                     System.out.printf("O vencedor é %s!%n", participante2);
@@ -26,5 +23,16 @@ public class Rodadas {
             }
         }
         return vez;
+    }
+
+    private static boolean verificarFinalJogo(String[] tabuleiro){
+        return  (tabuleiro[0].equals(tabuleiro[1]) && tabuleiro[1].equals(tabuleiro[2])) ||
+                (tabuleiro[3].equals(tabuleiro[4]) && tabuleiro[4].equals(tabuleiro[5])) ||
+                (tabuleiro[6].equals(tabuleiro[7]) && tabuleiro[7].equals(tabuleiro[8])) ||
+                (tabuleiro[0].equals(tabuleiro[3]) && tabuleiro[3].equals(tabuleiro[6])) ||
+                (tabuleiro[1].equals(tabuleiro[4]) && tabuleiro[4].equals(tabuleiro[7])) ||
+                (tabuleiro[2].equals(tabuleiro[5]) && tabuleiro[5].equals(tabuleiro[8])) ||
+                (tabuleiro[0].equals(tabuleiro[4]) && tabuleiro[4].equals(tabuleiro[8])) ||
+                (tabuleiro[2].equals(tabuleiro[4]) && tabuleiro[4].equals(tabuleiro[6]));
     }
 }
