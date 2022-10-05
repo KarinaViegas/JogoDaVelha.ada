@@ -8,9 +8,19 @@ public class Placar {
         } else if (vencedor.equals(participante2)) {
             vitoriasPart2++;
         }else{
-            System.out.println("Empate");
             empate++;
         }
-        System.out.printf("O placar atual é:%n%s: %d;%n%s: %d;%nEmpate: %d.%n", participante1, vitoriasPart1, participante2, vitoriasPart2, empate);
+       // System.out.printf("O placar atual é:%n%s: %d;%n%s: %d;%nEmpate: %d.%n", participante1, vitoriasPart1, participante2, vitoriasPart2, empate
+
+        System.out.println("+------------------------------+");
+        System.out.println("  -Placar Atual-                ");
+        System.out.println("+------------------------------+");
+        System.out.printf( " %s->  %d                      \n" , participante1, vitoriasPart1);
+        System.out.println("+------------------------------+");
+        System.out.printf( " %s-> %d                      \n", participante2 , vitoriasPart2);
+        System.out.println("+------------------------------+");
+        System.out.printf( " Empate->  %d                 \n",  empate);
+        System.out.println("+------------------------------+");
+
     }
 }
