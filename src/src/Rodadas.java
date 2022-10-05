@@ -1,14 +1,15 @@
 public class Rodadas {
 
-    public static int rodadaAtual = 0;
+    public static int rodadaAtual;
     public static String rodadas(String participante1, String participante2, String[] tabuleiro){
         tabuleiro = new String[]{"1", "2", "3", "4", "5", "6", "7", "8", "9"};
         String vez = participante1;
+        rodadaAtual = 0;
         while (rodadaAtual < 9) {
             vez = Jogadas.jogadas(participante1, participante2, tabuleiro, vez);
             TabuleiroPrint.tabuleiroPrint(tabuleiro);
             if (verificarFinalJogo(tabuleiro)) {
-                System.out.println("O jogo acabou");
+                System.out.println("O jogo acabou\n");
                 if (vez.equals(participante1)) {
                     System.out.printf("O vencedor é %s!%n", participante2);
                     vez = participante2;
@@ -18,9 +19,10 @@ public class Rodadas {
                 }
                 break;
             } else if (rodadaAtual == 9) {
-//                System.out.println("Empate!");
+                System.out.println("Empate!");
                 vez = "Empate";
             }
+            System.out.println();
         }
         return vez;
     }

@@ -15,7 +15,7 @@ public class JogoDaVelha {
             TabuleiroPrint.tabuleiroPrint(tabuleiro);
             String vencedor = Rodadas.rodadas(participante1, participante2, tabuleiro);
             Placar.placar(vencedor, participante1, participante2);
-            System.out.println("Digite 'S' para jogar outra partida");
+            System.out.println("Digite 'S' para jogar outra partida ou qualquer outra letra para encerrar o programa");
             jogarNovamente = scanner.next().toUpperCase(Locale.ROOT).charAt(0);
         }
         System.out.println("Jogo encerrado");
