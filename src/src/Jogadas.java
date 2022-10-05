@@ -5,10 +5,11 @@ public class Jogadas {
         Scanner scanner = new Scanner(System.in);
         int posicaoJogada;
         System.out.printf("%n%s, escolha em qual posicão você deseja jogar:%n", vez);
-        posicaoJogada = scanner.nextInt();
-        posicaoJogada -= 1;//para funcionar com o array que começa com zero
+
 
         try{
+            posicaoJogada = scanner.nextInt();
+            posicaoJogada -= 1;//para funcionar com o array que começa com zero
             if (tabuleiro[posicaoJogada].equals("X") || tabuleiro[posicaoJogada].equals("O")) {
                 System.out.println("Posição inválida");
                 return vez;
